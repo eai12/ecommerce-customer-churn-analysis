@@ -1,0 +1,26 @@
+原表格数据导入全部都是varchar(255)的形式，需要将部分字段转换成INT和DECIMAL格或者float格式
+-- 1. 改整数型 (INT)
+ALTER TABLE  `电子商务客户流失数据`
+MODIFY `流失标志` INT,
+MODIFY `流失至今天数` INT,
+MODIFY `客户存续月数` INT,
+MODIFY `购买次数` INT,
+MODIFY `客服工单数` INT,
+MODIFY `退货次数` INT,
+MODIFY `距上次购买天数` INT,
+MODIFY `客服互动次数` INT,
+MODIFY `营销邮件发送数` INT,
+MODIFY `营销邮件打开数` INT,
+MODIFY `营销邮件点击数` INT,
+MODIFY `营销转化数` INT,
+MODIFY `推荐次数` INT,
+MODIFY `满意度评分` INT,
+MODIFY `反馈评分` INT;
+
+-- 2. 改浮点/金额型 (DECIMAL)
+ALTER TABLE  `电子商务客户流失数据`
+MODIFY `总消费金额(美元)` DECIMAL(15,2),
+MODIFY `平均订单金额(美元)` DECIMAL(15,2),
+MODIFY `客户终身价值(美元)` DECIMAL(15,2),
+MODIFY `流失收入影响(美元)` DECIMAL(15,2),
+MODIFY `忠诚度评分` float(5,1);
